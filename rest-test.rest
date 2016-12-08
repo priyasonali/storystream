@@ -1,0 +1,10 @@
+POST http://localhost/storystream/registration.php HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+user_email=name1@test.com&user_name=se1an&user_pass=someDecentPassword
+
+###
+
+GET http://localhost/storystream/registration.php?user_email=shan@test.com&user_name=sean&user_pass=someDecentPass
+
+###
