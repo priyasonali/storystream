@@ -4,8 +4,8 @@
   class Database {
 	
 	protected $db_name = 'storystream';
-	protected $db_user = 'root';
-	protected $db_pass = '';
+	protected $db_user = 'admin';
+	protected $db_pass = '12345';
 	protected $db_host = 'localhost';
 	
 	public function connect() {
