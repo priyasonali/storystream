@@ -1,4 +1,3 @@
-
 <?php
   
   class Database {
@@ -20,3 +19,4 @@
 	}
 
 }
+?>

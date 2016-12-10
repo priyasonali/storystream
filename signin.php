@@ -1,12 +1,9 @@
-
 <?php
-// Project: Story Stream
-    header("Content-type: application/json");
+    header("content-type: application/json");
     require 'class.database.php';
     require 'class.errorlist.php';
+    require 'class.jwt.php';
     $response = array();
-    
-
     class Signin{
 
         public function __construct($uname, $upass) {
@@ -15,6 +12,7 @@
             $this->user_pass = $upass;
 
         }
+        
 
         public function pulldata(){  
             $db = new Database;
@@ -29,9 +27,14 @@
                 $row = $result->fetch_assoc();
                 $user = $row['user_name'];
                 $pass = $row['user_pass'];
-                
+
                 if($user == $user_name && $pass == $this->user_pass && $result->num_rows > 0){
                     $response["status"] = "Logged in";
+                    $uid["user_id"] = $row['user_id'];
+                    //$response ["authentication_token"]=  JWT::encode($uid, enchanted);
+
+                   header('authorization:'.JWT::encode($uid, enchanted));
+
                 }
                 else{
                     $response["status"] = "Failed";

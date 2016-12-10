@@ -1,4 +1,3 @@
-
 <?php
   
   class ErrorList {
@@ -10,3 +9,4 @@
           $this->errlist[2] = "Please enter the details.";
       }
 }
+?>
