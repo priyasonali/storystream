@@ -31,7 +31,7 @@
                 if($user == $user_name && $pass == $this->user_pass && $result->num_rows > 0){
                     $response["status"] = "Logged in";
                     $uid["user_id"] = $row['user_id'];
-                    //$response ["authentication_token"]=  JWT::encode($uid, enchanted);
+                    $response ["authentication_token"]=  JWT::encode($uid, enchanted);
 
                    header('authorization:'.JWT::encode($uid, enchanted));
 
@@ -51,7 +51,7 @@
         
     }
 
-    $check = new Signin($_REQUEST["user_name"],$_REQUEST["user_pass"]);
-    echo $check->pulldata();
+    $signin = new Signin($_REQUEST["user_name"],$_REQUEST["user_pass"]);
+    echo $signin->pulldata();
     
 ?>
