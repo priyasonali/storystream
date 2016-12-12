@@ -2,8 +2,8 @@
 <?php
 // Project: Story Stream
     header("Content-type: application/json");
-    require 'class.database.php';
-    require 'class.errorlist.php';
+    require './includes/class.database.php';
+    require './includes/class.errorlist.php';
     $response = array();
     
 
